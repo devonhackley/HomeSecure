@@ -1,7 +1,9 @@
 'use strict';
 
+require('./_landing-header.scss');
+
 require('angular').module('homeSecure')
-.component('landing-header', {
+.component('landingHeader', {
   template: require('./landing-header.html'),
   controller: ['$log','$location', function($log, $location){
     this.$onInit = () => {
@@ -12,7 +14,7 @@ require('angular').module('homeSecure')
         $location.path('/landing');
       };
       this.navClickAbout = () => {
-        $location.path('./about');
+        $location.path('/about');
       };
     };
   }],
