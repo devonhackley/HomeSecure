@@ -8,7 +8,7 @@ const ngFileUpload  = require('ng-file-upload');
 
 angular.module('homeSecure', [uiRouter, ngFileUpload])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.when('', '/landing');
+  $urlRouterProvider.when('', '/login');
 
   let routes = [
     {
@@ -34,11 +34,6 @@ angular.module('homeSecure', [uiRouter, ngFileUpload])
       url: '/dashboard',
       template: '<dashboard></dashboard>',
     },
-    {
-      name: 'landing',
-      url: '/landing',
-      template: '<landing></landing>',
-    },
   ];
   routes.forEach(route => $stateProvider.state(route));
 }]);
@@ -48,11 +43,11 @@ require('./service/enrollee-service.js');
 
 require('./containers/admin');
 require('./containers/dashboard');
-require('./containers/landing');
+// require('./containers/landing');
 
 require('./components/login');
 require('./components/enrollee-create');
 require('./components/enrollee-item');
 require('./components/header');
 
-require('./components/landing-header');
+// require('./components/landing-header');
